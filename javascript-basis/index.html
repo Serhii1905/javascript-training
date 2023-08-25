@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Notes</title>
+</head>
+
+<body>
+    <script>
+        /* Data Types:
+        Undefined, null, Boolean, symbol, number, string, object */
+        var myName = "Yan";
+        let myLastName = "Popovych";
+        const mybirthday = "19.05";
+        myName = "Serhii"; // We changed "MyName" variation //
+        console.log (myName)
+        let myFullName = myName + " " + myLastName;
+        console.log (myFullName);
+        /* +, -, *, /, ++ - add 1; --; % - remainder (неокруглений залишок);
+        +=, -=, *=, /= */
+        let stringquotes = "Here I quote 'a string' inside a string and `again` and \"again\" and \ngo to the new line";
+        let fullNameLength = myFullName.length;
+        console.log (fullNameLength);
+        let firstLetterOfName = myName[0]; //P//
+        let lastLetterOfName = myName [myName.length - 1]; //h//
+        let myArray = ["Hello World!","Hello Ukraine!"];
+        console.log (myArray);
+        let myArrayData = myArray [1];
+        console.log(myArrayData); //"Hello Ukraine!"//
+        let arrayOfNumbers = [10,20,40];
+        arrayOfNumbers[2] = 30;
+        console.log(arrayOfNumbers);
+        let superArrayOfNumbers = [1,2,3,[4,5,6,[7,8,9]],10]
+        //To get 8://
+        console.log (superArrayOfNumbers);
+        let eight = superArrayOfNumbers [3] [3] [1];
+        console.log(eight);
+        superArrayOfNumbers.push (11,12,13);
+        superArrayOfNumbers.pop () //Removing 13//
+        //.shift - removes 1st element, not last as pop does //
+        // unshift - adds! 1st element //
+        myArray.unshift("Hello Europe!");
+        // But myArrayData is still "Hello Ukraine!" //
+        console.log (myArrayData)
+
+        // Functions //
+
+        function reusableFunction() {
+            console.log ("Hey, what's up?");
+        }
+
+        reusableFunction(); // That function above is called //
+        function reusableFunctionWithArgs (a,b) {
+            console.log (a-b);
+        }
+        reusableFunctionWithArgs(10,5); // 5 //
+
+        let outerWear = "T-Shirt";
+        function myOuterWear() {
+            let outerWear = "Sweater";
+            return outerWear;
+        }
+        console.log(outerWear); // T-Shirt //
+        console.log(myOuterWear()); // Sweater //
+
+        function minusFive (num) {
+            return num-5;
+        }
+        console.log (minusFive(10));
+
+        // Boolean + if //
+
+        function TrueOrFalse(isItTrue) {
+            if (isItTrue) {
+                return "Yes, It's true!";
+            }
+            else {
+                return "No, It's false!"; 
+            }
+        }
+        console.log(TrueOrFalse(true));
+        console.log(TrueOrFalse("asf")); // Anything, written here is true exept false and 0 and nothing //
+        // && - and, || - or, !- no //
+        function testNumber(num) {
+            if(num > 5 && num < 15) {
+                return "Inside";
+            }
+            else {
+                return "Outside";
+            }
+        } 
+        console.log(testNumber(10));
+        console.log(testNumber(20)); 
+
+        function testNumber2(num) {
+            if(num < 5 || num > 15) {
+                return "OutSide";
+            }
+            else {
+                return "Inside";
+            }
+        } 
+        console.log(testNumber2(10));
+        console.log(testNumber2(20)); 
+
+        function testSize(num) {
+            if (num < 8) {
+                return "Tiny";
+            }
+            else if (num < 12) {
+                return "Small";
+            }
+            else if (num < 18) {
+                return "Medium";
+            }
+            else if (num >= 18) {
+                return "Big";
+            }
+        }
+        console.log (testSize(18))
+        console.log (testSize(15))
+
+        function caseInSwitch(val) {
+            let answer = "";
+            switch (val) {
+                case 1:
+                    answer = "Alpha";
+                    break;
+                case 2:
+                    answer = "Beta";
+                    break;
+                case 3:
+                    answer = "Delta";
+                    break;
+                default:
+                    answer = "Unknown"
+                    break;
+            }
+            return answer;
+        }
+        console.log (caseInSwitch(3)); // Delta //
+    </script>
+</body>
+</html>
