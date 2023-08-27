@@ -140,6 +140,92 @@
             return answer;
         }
         console.log (caseInSwitch(3)); // Delta //
+        
+        function caseWithoutBreak(val) {
+            let answer = "";
+            switch (val) {
+                case 1:
+                case 2: 
+                case 3: 
+                answer = "1 to 3";
+                break;
+            }
+            return answer;
+        }
+        
+        function isLess(a,b) {
+            return a<b;
+        }
+        console.log(isLess(10,5)); // False //
+
+        let testObj = {
+            "name": "Van",
+            "age": 20,
+            "nationality": ["ukrainian"],
+            "second name": "Ali"
+        }
+        console.log(testObj.name); // Van //
+        console.log(testObj["second name"]); // Ali //
+
+        let playerName = {
+            1: "Yan",
+            2: "Ad",
+            3: "Criss"
+        }
+        let playerNumber = 3;
+        player = playerName[playerNumber]; // Criss //
+
+        playerNumber[4] = "Addie"; // Addind new property to an object //
+        delete playerNumber[4]; // Deleting it //
+
+        function objInsteadOfCases(val) {
+            let answer = "";
+            let names = {
+                1: "Alpha",
+                2: "Beta",
+                3: "Delta"
+            }
+            answer = names[val]
+            return answer;
+        }
+        console.log(objInsteadOfCases(2)); // Beta //
+
+        //Record Collection Challenge // 
+        let records = {
+            1234: {
+                "Album": "Disconnect",
+                "Artist": "Tiesto",
+                "Tracks": [
+                    "Disconnect (Tiesto Remix)",
+                    "Disconnect (Tiesto Extended Remix)"
+                ]
+            },
+            5678: {
+                "Album": "Жива i не залізна",
+                "Artist": "The Hardkiss",
+                "Tracks": [
+                    "Жива",
+                    "Гора",
+                    "7 вітрів"
+                ]
+            }
+        }
+        let recordsCopy = JSON.parse(JSON.stringify(records));
+        function updateRecords(id, prop, value) {
+            if (value === "") {
+                delete (records[id][prop]);
+            }
+            else if (prop === "Tracks" && !records[id][prop].includes(value)) {
+                records[id][prop].push(value);
+            }
+            else if (records[id][prop] === undefined) {
+                records[id][prop] = value;
+            }
+            return records;
+        }
+        console.log(updateRecords(5678,"Year","2021"));
+        console.log(updateRecords(5678,"Tracks","Cobra"));
+        console.log(updateRecords(5678,"Tracks","Cobra"));
     </script>
 </body>
 </html>
