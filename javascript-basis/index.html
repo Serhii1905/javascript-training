@@ -226,6 +226,72 @@
         console.log(updateRecords(5678,"Year","2021"));
         console.log(updateRecords(5678,"Tracks","Cobra"));
         console.log(updateRecords(5678,"Tracks","Cobra"));
+
+        // Function Loop //
+        let arrayOfNumbers2 = [];
+        let i = 0;
+        while(i<5) {
+            arrayOfNumbers2.push(i);
+            i++
+        } 
+        // This function will restart untill i=5 // 
+        console.log(arrayOfNumbers2); // [0, 1, 2, 3, 4] //
+
+        // for (initialisation; condition; action)
+        // for command does the same:
+        for(i=5; i<10; i++) {
+            arrayOfNumbers2.push(i);
+        }
+        console.log(arrayOfNumbers2); // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] //
+
+        let arrayOfNumbers3 = [];
+        for(i=0; i<10; i+=2) {
+            arrayOfNumbers3.push(i)
+        }
+        console.log(arrayOfNumbers3) // [0, 2, 4, 6, 8] //
+
+        // Random Numbers //
+        function random() {
+            return Math.random();
+        }
+        console.log(random()) 
+
+        function randomWholeNumbers() {
+            let randomnum = Math.floor(Math.random() * 10) 
+            return randomnum;
+        } 
+        // It`s a random number 1-9, because math.random can never be 1 (1*10 is impossible)
+            // floor - округлення //
+        console.log(randomWholeNumbers());
+
+        function randomRange (Min, Max) {
+            let randomnum = Math.floor (Math.random() * (Max - Min + 1)) + Min;
+            return randomnum;
+        }
+        console.log(randomRange(1,3));
+
+        // parseInt //
+        function convertToInteger(str) {
+            return parseInt(str)
+        }
+        console.log(convertToInteger("56")); // 56 // 
+
+        // Ternary //
+        // condition ? if true : if false //
+        // condition ? if true : new condition //
+        function checkSign(num) {
+            return num > 0 ? "positive" : num < 0 ? "negative" : "zero"
+        }
+        console.log(checkSign(-3)); // negative //
+
+        // const can`t be changed, but const array can // 
+        const ARRAY = [5, 2, 3, 4];
+        function changeConst() {
+            "use strict";
+            ARRAY [0] = 1;
+        } 
+        changeConst()
+        console.log(ARRAY);
     </script>
 </body>
 </html>
