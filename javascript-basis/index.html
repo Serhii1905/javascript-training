@@ -30,7 +30,7 @@
         console.log(myArrayData); //"Hello Ukraine!"//
         let arrayOfNumbers = [10,20,40];
         arrayOfNumbers[2] = 30;
-        console.log(arrayOfNumbers);
+        console.log(arrayOfNumbers); // 30 //
         let superArrayOfNumbers = [1,2,3,[4,5,6,[7,8,9]],10]
         //To get 8://
         console.log (superArrayOfNumbers);
@@ -81,6 +81,8 @@
         }
         console.log(TrueOrFalse(true));
         console.log(TrueOrFalse("asf")); // Anything, written here is true exept false and 0 and nothing //
+        console.log(TrueOrFalse(1>2)); // false //
+        console.log(TrueOrFalse(myName === myLastName)) // false //
         // && - and, || - or, !- no //
         function testNumber(num) {
             if(num > 5 && num < 15) {
@@ -175,8 +177,8 @@
         let playerNumber = 3;
         player = playerName[playerNumber]; // Criss //
 
-        playerNumber[4] = "Addie"; // Addind new property to an object //
-        delete playerNumber[4]; // Deleting it //
+        playerName[4] = "Addie"; // Addind new property to an object //
+        delete playerName[4]; // Deleting it //
 
         function objInsteadOfCases(val) {
             let answer = "";
@@ -264,6 +266,14 @@
             // floor - округлення //
         console.log(randomWholeNumbers());
 
+        function randomWholeNumbersTo3() {
+            let randomnum = Math.floor(Math.random() * 3) // 0, 1, 2 //
+            return randomnum;
+        } 
+        // It`s a random number 1-9, because math.random can never be 1 (1*10 is impossible)
+            // floor - округлення //
+        console.log(randomWholeNumbersTo3());
+
         function randomRange (Min, Max) {
             let randomnum = Math.floor (Math.random() * (Max - Min + 1)) + Min;
             return randomnum;
@@ -291,7 +301,71 @@
             ARRAY [0] = 1;
         } 
         changeConst()
-        console.log(ARRAY);
+        console.log(ARRAY); // [1, 2, 3, 4] //
+        // But you can't thange everything at once //
+
+        // freeze // 
+        Object.freeze(ARRAY); // It will be 1 2 3 4 forever, whatever you do //
+        // If you white it before the function changeConst, it causes an error // 
+
+        // very short functions (arrow function) //
+        //You can white function like this://
+        const function1 = () => {return ARRAY};
+
+        // Infinite values //
+        function sum(...args) {
+            return args.reduce((a,b) => a + b, 0);
+        }
+        console.log(sum(1,2,3)) //6//
+        console.log(sum(1,2,3,4,5)) //15//
+
+        //Copying array's content//
+        const ARRAY2 = [10, 20, 30, 40];
+        let array1;
+        (function () { 
+            //array1 = ARRAY2;//
+            array1 = [...ARRAY2] // copying everything, but not following changes as === //
+            ARRAY2[0] = 15;
+        })()  
+        console.log(array1 == ARRAY2); // true //
+        // But if we write [...ARRAY2] //
+        // false. Because ARRAY2[0] === 15 and array1[0] === 10 // 
+
+        //Templates// 
+        let user = {
+            name: "Van",
+            age: 19
+        }
+        let greeting = `Hello, my name is ${user.name}, I am ${user.age} years old!`
+        console.log(greeting);
+        
+        //Make list Challenge //
+        /* function makeList(arr) {
+            let resultList;
+            for (let i = 0; i < arr.length; i++) {
+                resultList.push(`<li class=tracks-list>&{arr[i]}</li>`)
+            }
+            return resultList;
+        }
+        console.log(makeList(records[5678]["tracks"])) */
+
+        let objWithFunction = {
+            something: "something",
+            makeUser(name,age,gender) {return {name,age,gender}}
+        }
+        console.log(objWithFunction.makeUser("Yan", 20, "male"))
+
+        /* HOW TO IMPORT AND EXPORT FILES 
+        export const toUpper = (str) => {str.topperCase()} 
+
+        How to import
+
+        import {toUpper} from "./index.html"
+
+        and we can anytime write
+
+        let cap = toUpper("Hello!"); It gives "HELLO!"
+        */
     </script>
 </body>
 </html>
