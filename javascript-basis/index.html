@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="background-color: white;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -366,6 +366,120 @@
 
         let cap = toUpper("Hello!"); It gives "HELLO!"
         */
+
+        // Strings //
+
+        let testString = "Hello World!";
+        console.log("Hello".charAt(1)); // e //
+        console.log(testString.charAt(1)); // e //
+
+        let string = "Pirate ship, red wine" // "Pirate ship" //
+        let createString1 = String("Pirate ship") // "Pirate ship" //
+        let createString2 = new String("Pirate ship"); // {'Pirate ship'}
+        let createString3 = "2+2"
+        // Methods //
+        console.log(createString1);
+        console.log(createString2);
+        console.log(eval(createString3)); // 4 //
+        console.log(createString1.concat(createString3)) // Pirate ship, red wine2+2 //
+        console.log(string.codePointAt(1)) // 105 //
+        console.log(string.endsWith("p")) // true //
+        console.log(createString3.repeat(2)) // 2+22+2
+        console.log(eval(createString3.repeat(2))) // 26 
+        console.log(string.replace("/ship/i", "hat")) // Pirate hat /i - ignore capital letters //
+        console.log(string.slice(4)) // te ship, red wine //
+        console.log(string.split(",")) // ['Pirate ship', 'red wine']
+        console.log(string.substring(4)) // te ship, red wine //
+        console.log(string.substr(7, 4)) // ship //
+
+        
     </script>
+    <label for="weather">Select the weather type today: </label>
+    <select id="weather">
+      <option value="">--Make a choice--</option>
+      <option value="sunny">Sunny</option>
+      <option value="rainy">Rainy</option>
+      <option value="snowing">Snowing</option>
+      <option value="overcast">Overcast</option>
+    </select>
+    <p></p>
+
+    <button style="
+    padding: 10px;
+    background-color: blue;
+    color: white;
+    cursor: pointer;">Theme: White</button>
+    <script>
+    const select = document.querySelector("select");
+        const para = document.querySelector("p");
+
+    select.onchange = setWeather;
+
+function setWeather() {
+  const choice = select.value;
+
+  if (choice === "sunny") {
+    para.textContent =
+      "It is nice and sunny outside today. Wear shorts! Go to the beach, or the park, and get an ice cream.";
+  } else if (choice === "rainy") {
+    para.textContent =
+      "Rain is falling outside; take a rain coat and an umbrella, and don't stay out for too long.";
+  } else if (choice === "snowing") {
+    para.textContent =
+      "The snow is coming down — it is freezing! Best to stay in with a cup of hot chocolate, or go build a snowman.";
+  } else if (choice === "overcast") {
+    para.textContent =
+      "It isn't raining, but the sky is grey and gloomy; it could turn any minute, so take a rain coat just in case.";
+  } else {
+    para.textContent = "";
+  }
+}
+/* It work's too:
+function setWeather() {
+  const choice = select.value;
+
+  switch (choice) {
+    case "sunny":
+      para.textContent =
+        "It is nice and sunny outside today. Wear shorts! Go to the beach, or the park, and get an ice cream.";
+      break;
+    case "rainy":
+      para.textContent =
+        "Rain is falling outside; take a rain coat and an umbrella, and don't stay out for too long.";
+      break;
+    case "snowing":
+      para.textContent =
+        "The snow is coming down — it is freezing! Best to stay in with a cup of hot chocolate, or go build a snowman.";
+      break;
+    case "overcast":
+      para.textContent =
+        "It isn't raining, but the sky is grey and gloomy; it could turn any minute, so take a rain coat just in case.";
+      break;
+    default:
+      para.textContent = "";
+  }
+}*/
+
+const button = document.querySelector("button");
+const html = document.querySelector("html");
+document.body.style.padding = "10px";
+
+let isBlackTheme = false;
+
+function update(bgColor, textColor, text) {
+  html.style.backgroundColor = bgColor;
+  html.style.color = textColor;
+  button.textContent = text;
+}
+
+button.onclick = () => {
+  isBlackTheme = !isBlackTheme;
+  if (isBlackTheme) {
+    update("black", "white", "Theme: Black");
+  } else {
+    update("white", "black", "Theme:White");
+  }
+}
+    </script>    
 </body>
 </html>

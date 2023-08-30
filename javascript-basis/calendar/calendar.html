@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    <link href="./calendarstyle.css" rel="stylesheet">
+</head>
+<body>
+    <label>Select month:</label>
+    <select>
+        <option value="">Choose a month</option>
+        <option value="january">January</option>
+        <option value="february">February</option>
+        <option value="march">March</option>
+        <option value="april">April</option>
+        <option value="may">May</option>
+        <option value="june">June</option>
+        <option value="july">July</option>
+        <option value="august">August</option>
+        <option value="sebtember">Sebtember</option>
+        <option value="october">October</option>
+        <option value="november">November</option>
+        <option value="december">December</option>
+    </select>
+    <h1></h1>
+    <ul>
+    
+    </ul>
+</body>
+<script>
+    const select = document.querySelector("select");
+    const h1 = document.querySelector("h1");
+    const ul = document.querySelector("ul");
+
+    select.onchange = change;
+
+    function changeCalendar (days, choice) {
+        h1.textContent = choice[0].toUpperCase() + choice.slice(1);
+        ul.innerHTML = '';
+            for (i=1;i<=days;i++) {
+                let listItem = document.createElement('li');
+                listItem.textContent = i;
+                ul.appendChild(listItem);
+            }
+        }
+    function change() {
+        const choice = select.value;
+        if (choice === "february") {
+            changeCalendar(28, "february");
+        }
+        else if (choice === "april" || choice === "june" || choice === "september" || choice === "november") {
+            changeCalendar (30, choice);
+        }
+        else {
+            changeCalendar (31, choice);
+        }
+        
+    }
+
+</script>
+</html>

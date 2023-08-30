@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+</head>
+<body>
+</body>
+<script>
+  function checkJavaScriptName() {
+    while (true) {
+        let answer = prompt('What is the “official” name of JavaScript?');
+
+        if (answer === "ECMAScript") {
+            alert("Right!");
+            break; // Завершити цикл, якщо відповідь правильна
+        } else {
+            alert("You don't know? ECMAScript!");
+        }
+    }
+}
+checkJavaScriptName()
+/* while (true) є безмежним циклом, який буде виконуватися завжди, оскільки умова (у цьому випадку true) завжди вірна.
+Проте, виходити з такого циклу можна за допомогою директиви break, якщо виконана певна умова.
+У цьому випадку, while (true) використовується, щоб створити безкінечний цикл, який буде запитувати користувача про ім'я JavaScript 
+до тих пір, поки користувач не надасть правильну відповідь (тобто введе "ECMAScript"). 
+Коли користувач вводить правильну відповідь, виконується директива break, і цикл завершується, 
+що водночас завершує і виконання функції checkJavaScriptName. */
+</script>
+</html>
