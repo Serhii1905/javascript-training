@@ -20,12 +20,19 @@
         }
     }
 }
-checkJavaScriptName()
+//checkJavaScriptName()
+
 /* while (true) є безмежним циклом, який буде виконуватися завжди, оскільки умова (у цьому випадку true) завжди вірна.
 Проте, виходити з такого циклу можна за допомогою директиви break, якщо виконана певна умова.
 У цьому випадку, while (true) використовується, щоб створити безкінечний цикл, який буде запитувати користувача про ім'я JavaScript 
 до тих пір, поки користувач не надасть правильну відповідь (тобто введе "ECMAScript"). 
 Коли користувач вводить правильну відповідь, виконується директива break, і цикл завершується, 
 що водночас завершує і виконання функції checkJavaScriptName. */
+
+function checkNumber() { 
+let numberPrompt = prompt("", "0");
+numberPrompt<0 ? alert("Negative") : numberPrompt>0 ? alert("Positive") : alert("zero");
+}
+checkNumber();
 </script>
 </html>
