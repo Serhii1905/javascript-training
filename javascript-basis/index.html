@@ -499,6 +499,8 @@ function hello(name = "Chris") {
     console.log(`Hello, ${name}!`);
 } 
 hello(); //Hello, Chris!//
+// What we did here: chris is the default value of the name parameter 
+hello("Amanda"); // Hello, Amanda // 
 
 (function(){
     console.log("Hello");
@@ -521,6 +523,32 @@ const output = document.querySelector("#output");
 textBox.addEventListener("keydown", (event) => {
   output.textContent = `You pressed "${event.key}".`;
 });
+
+function sayHi() {
+    alert("Hi");
+}
+let sayHiCopy = sayHi;
+// sayHiCopy(); - it works as function! So with let you can add a name to a function
+
+/* function ask(question, yes, no) {
+  if (confirm(question)) yes()
+  else no();
+}
+function yes {}
+function no{} 
+
+OR
+
+function ask(question) {
+    confirm(question) ? alert("You agreed") : alert("You disagreed");
+}
+ask("Do you agree?");
+
+You can access arrow functions only after declaration 
+console.log(summary(2,3)); It doesn`t work
+let summary = (a,b) => {a + b};
+*/
+
     </script>    
 </body>
 </html>
