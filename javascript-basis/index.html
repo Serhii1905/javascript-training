@@ -549,6 +549,41 @@ console.log(summary(2,3)); It doesn`t work
 let summary = (a,b) => {a + b};
 */
 
+/* const cats = ["Leopard", "Serval", "Jaguar", "Tiger", "Caracal", "Lion"];
+
+for (const cat of cats) {
+  console.log(cat);
+} 
+===
+for (let i = 0; i < cats.length; i++) {
+  console.log(cats[i]);
+}
+*/
+
+const cats = ["Leopard", "Serval", "Jaguar", "Tiger", "Caracal", "Lion"];
+
+const upperCats = cats.map(toUpper);
+
+console.log(upperCats);
+// [ "LEOPARD", "SERVAL", "JAGUAR", "TIGER", "CARACAL", "LION" ]
+
+const filtered = cats.filter((cat) => cat.startsWith("L"));
+console.log(filtered);
+// [ "Leopard", "Lion" ]
+
+let myFavoriteCats = "My cats are called ";
+
+for (let i = 0; i < cats.length; i++) {
+  if (i === cats.length - 1) {
+    // We are at the end of the array
+    myFavoriteCats += `and ${cats[i]}.`;
+  } else {
+    myFavoriteCats += `${cats[i]}, `;
+  }
+}
+
+console.log(myFavoriteCats); // "My cats are called Pete, Biggles, and Jasmine."
+
     </script>    
 </body>
 </html>
