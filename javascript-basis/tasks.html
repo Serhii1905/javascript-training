@@ -52,5 +52,30 @@ console.log(add7(2));
 console.log(multiply(3,5));
 console.log(capitalize("Hello!"));
 console.log(lastLetter("Hello"));
+
+
+const reverseString = function (string) {
+  return string.split("").reverse().join("");
+};
+console.log(reverseString("Hello, World!"))
+
+let arrayForTest = [1,2,3,4];
+function removeFromArray(array, ...repl) {
+
+return array.join().toString().replace(`${repl},`,'').replace(`,${repl}`,'').split(",")
+}
+
+console.log(removeFromArray([1,2,3,4], 3));
+console.log(removeFromArray([1,2,3,4,5], 2,3,4))
+console.log(removeFromArray(["I","am","bad"], "am,bad"))
+
+function sumAllInBetween(numFirst,numLast) {
+    let sum = 0
+    for (i=numFirst; i<=numLast; i++) {
+        sum += i;
+    }
+    return sum;
+} 
+console.log(sumAllInBetween(1,4)) //10
 </script>
 </html>

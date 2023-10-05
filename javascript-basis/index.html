@@ -388,7 +388,7 @@
         console.log(createString1);
         console.log(createString2);
         console.log(eval(createString3)); // 4 //
-        console.log(createString1.concat(createString3)) // Pirate ship, red wine2+2 //
+        console.log(createString1 + " ".concat(createString3)) // Pirate ship, red wine 2+2 //
         console.log(string.codePointAt(1)) // 105 //
         console.log(string.endsWith("p")) // true //
         console.log(createString3.repeat(2)) // 2+22+2
@@ -587,11 +587,6 @@ for (let i = 0; i < cats.length; i++) {
 }
 
 console.log(myFavoriteCats); // "My cats are called Pete, Biggles, and Jasmine."
-
-const reverseString = function (string) {
-  return string.split("").reverse().join("");
-};
-console.log(reverseString("Hello, World!"))
     </script>    
 </body>
 </html>
