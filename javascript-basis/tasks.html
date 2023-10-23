@@ -76,6 +76,23 @@ function sumAllInBetween(numFirst,numLast) {
     }
     return sum;
 } 
-console.log(sumAllInBetween(1,4)) //10
+console.log(sumAllInBetween(1,4)) //10'
+
+function isYearLeap(year) {
+    if (year % 4 === 0 && year % 100 !== 0) {
+        return "is a leap year"
+    }
+    else if (year % 400 === 0) {
+        return "is a leap year"
+    }
+    else {
+        return "is not a leap year"
+    }
+}
+console.log(isYearLeap(2000))
+console.log(isYearLeap(1985))
+console.log(isYearLeap(1800))
+console.log(isYearLeap(1900))
+console.log(isYearLeap(1600))
 </script>
 </html>
