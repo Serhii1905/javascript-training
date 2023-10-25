@@ -3,7 +3,7 @@ console.dir(container.firstElementChild) // .display
 const controls = document.querySelector('.controls');
 console.dir(controls.previousElementSibling) // .display
 // querySelectorAll() - selects all of the matches
-let newDiv = document. createElement('div');
+let newDiv = document.createElement('div');
 newDiv.style.color = 'blue';
 newDiv.style.csstext = 'color: blue; background: white;';
 newDiv.setAttribute ('style', 'color: blue; background: white;');
@@ -32,7 +32,6 @@ const h3Element = document.createElement('h3');
 h3Element.textContent = "Hey I'am a blue h3!";
 h3Element.style.color = 'blue';
 container.appendChild(h3Element);
-
 
 const divInContainer = document.createElement('div');
 divInContainer.classList.add('divInContainer');
