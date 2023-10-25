@@ -46,3 +46,32 @@ pInDiv.textContent = "ME TOO!";
 divInContainer.appendChild(pInDiv);
 
 container.appendChild(divInContainer);
+
+const button2 = document.querySelector('.button2');
+button2.onclick = () => alert("Hello World!");
+
+const button3 = document.querySelector('.button3');
+button3.addEventListener('click', () => {alert("Hello World!")});
+
+button3.addEventListener('click', function (e) {
+    console.log(e);
+  });
+
+button3.addEventListener('click', function (e) {
+    console.log(e.target);
+  });
+
+  button3.addEventListener('click', function (e) {
+    e.target.style.background = 'blue';
+  });
+
+  const buttons = document.querySelectorAll('button');
+
+// we use the .forEach method to iterate through each button
+buttons.forEach((button) => {
+
+  // and for each one we add a 'click' listener
+  button.addEventListener('click', () => {
+    console.log(button.id);
+  });
+});
